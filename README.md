@@ -1,40 +1,36 @@
-Gmail Weather – n8n Automation
+<div align="center">
+🌤️ Gmail Weather – Automated Daily Email (n8n Workflow)
 
-This n8n workflow automatically fetches the daily weather for Nagpur and sends it to a Gmail inbox every morning.
+Get your daily Nagpur weather report delivered straight to your Gmail every morning.
 
-Overview
+🔁 Powered by n8n • ☁ OpenWeatherMap • ✉ Gmail OAuth
+</div>
+✨ What This Workflow Does
 
-This automation performs the following steps:
+⏰ Runs every day at 6:00 AM
 
-Triggers every day at 6:00 AM
+🌦 Fetches live weather from OpenWeatherMap
 
-Fetches weather data from OpenWeatherMap
+📧 Sends a formatted weather update email through Gmail
 
-Sends an email through Gmail containing:
+🔒 Keeps all API keys & tokens secure inside n8n (not in the repo)
 
-Maximum temperature
+🧩 Workflow Breakdown
+1️⃣ Schedule Trigger
 
-Minimum temperature
+Triggers the workflow every morning at 06:00 AM.
 
-Weather description
+2️⃣ OpenWeatherMap Node
 
-Workflow Components
-1. Schedule Trigger
+Fetches weather for:
 
-Runs daily at 6 AM and initiates the workflow.
+📍 City: Nagpur
 
-2. OpenWeatherMap Node
+Requires an OpenWeatherMap API Credential (you add this inside n8n).
 
-Fetches weather details for the city Nagpur.
-Requires an OpenWeatherMap API credential (not included in the repo).
+3️⃣ Gmail Node
 
-3. Gmail Node
-
-Sends the weather update email using Gmail OAuth2 credentials (not included).
-
-Email Format
-
-The email sent looks like:
+Sends an email containing:
 
 Hey Bro!
 Today's weather-
@@ -43,44 +39,49 @@ Min: {{ temp_min }}
 Description: {{ description }}
 
 
-Dynamic values are inserted from the weather API response.
+All values are dynamically inserted from the API response.
 
-Credentials Notice
-
-This repository does not include any sensitive information such as API keys or OAuth tokens.
-You must configure all credentials manually inside your n8n instance.
-
-Import Instructions
+📥 Importing the Workflow
 
 Open n8n
 
-Go to Workflows → Import
+Navigate to Workflows → Import
 
-Upload the .json file from this repository
+Select the gmail-weather.json file
 
-Assign your own credentials for:
+Set your credentials:
 
-OpenWeatherMap API
+🔑 OpenWeatherMap API
 
-Gmail OAuth2
+✉ Gmail OAuth2
 
-Files in This Repository
-File	Description
-gmail-weather.json	Exported n8n workflow file
-Customization
+📁 Files Included
+File	Purpose
+gmail-weather.json	Main exported n8n workflow
+🧰 Customization Options
 
-You can easily modify:
+You can modify any of the following in seconds:
 
-City name
+🏙️ City name
 
-Email content
+🕒 Trigger time
 
-Trigger schedule
+✉ Recipient email
 
-Recipient email
+🧾 Email message style
 
-Directly using the n8n UI after importing.
+🌡 Extra weather fields (humidity, wind, etc.)
 
-License
+🔐 Security Notice
 
-Open for personal or educational use. Modify and extend as needed with giving me due credits.
+No credentials, API keys, or sensitive info are stored in this repository.
+n8n keeps all secrets encrypted on your local setup.
+
+📄 License
+
+Free for personal, educational, and experimental use.
+Feel free to fork, modify, or extend!
+
+<div align="center">
+
+</div>
